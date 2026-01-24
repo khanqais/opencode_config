@@ -1,17 +1,16 @@
 {
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
-  
   "agents": {
     "Sisyphus": {
-      "model": "llm-proxy/claude-opus-4-5-thinking-proxy",
+      "model": "llm-proxy/claude-opus-proxy",
       "temperature": 0.3
     },
     "oracle": {
-      "model": "llm-proxy/gpt-4-5-preview-proxy",
+      "model": "llm-proxy/claude-sonnet-thinking-proxy",
       "temperature": 0.1
     },
     "librarian": {
-      "model": "llm-proxy/claude-sonnet-4-5-proxy",
+      "model": "llm-proxy/claude-sonnet-proxy",
       "temperature": 0.2
     },
     "explore": {
@@ -19,26 +18,25 @@
       "temperature": 0.3
     },
     "multimodal-looker": {
-      "model": "llm-proxy/gemini-3-pro-high-proxy"
+      "model": "llm-proxy/gemini-3-flash-proxy"
     },
     "Prometheus (Planner)": {
-      "model": "llm-proxy/claude-opus-4-5-thinking-proxy",
+      "model": "llm-proxy/claude-opus-proxy",
       "temperature": 0.2
     },
     "Metis (Plan Consultant)": {
-      "model": "llm-proxy/claude-sonnet-4-5-thinking-proxy",
+      "model": "llm-proxy/claude-sonnet-thinking-proxy",
       "temperature": 0.2
     }
   },
-  
   "categories": {
     "visual-engineering": {
-      "model": "llm-proxy/gemini-3-pro-high-proxy",
+      "model": "llm-proxy/gemini-3-flash-proxy",
       "temperature": 0.7,
       "prompt_append": "Focus on modern UI/UX patterns, responsive design, and accessibility."
     },
     "ultrabrain": {
-      "model": "llm-proxy/gpt-4-5-preview-proxy",
+      "model": "llm-proxy/claude-opus-proxy",
       "temperature": 0.1,
       "prompt_append": "Apply deep strategic thinking and architectural reasoning."
     },
@@ -48,14 +46,12 @@
       "prompt_append": "Prioritize speed and efficiency."
     }
   },
-  
   "background_task": {
     "defaultConcurrency": 5,
     "providerConcurrency": {
       "llm-proxy": 8
     }
   },
-  
   "sisyphus_agent": {
     "disabled": false,
     "default_builder_enabled": false,

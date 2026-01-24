@@ -1,11 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
-
   "plugin": ["oh-my-opencode"],
-
   "model": "llm-proxy/gemini-flash-proxy",
-  "small_model": "llm-proxy/gpt-4o-mini-proxy",
-
+  "small_model": "llm-proxy/gemini-flash-proxy",
   "provider": {
     "llm-proxy": {
       "npm": "@ai-sdk/openai-compatible",
@@ -16,41 +13,9 @@
         "timeout": 300000
       },
       "models": {
-        "gemini-3-pro-high-proxy": {
-          "id": "antigravity/gemini-3-pro-preview",
-          "name": "Gemini 3 Pro High (Proxy)",
-          "limit": {
-            "context": 1048576,
-            "output": 64000
-          },
-          "reasoning": true,
-          "options": {
-            "reasoningEffort": "high"
-          },
-          "modalities": {
-            "input": ["image", "text"],
-            "output": ["text"]
-          }
-        },
-        "gemini-3-pro-low-proxy": {
-          "id": "antigravity/gemini-3-pro-preview",
-          "name": "Gemini 3 Pro Low (Proxy)",
-          "limit": {
-            "context": 1048576,
-            "output": 64000
-          },
-          "reasoning": true,
-          "options": {
-            "reasoningEffort": "low"
-          },
-          "modalities": {
-            "input": ["image", "text"],
-            "output": ["text"]
-          }
-        },
         "gemini-flash-proxy": {
-          "id": "gemini_cli/gemini-2-0-flash-exp",
-          "name": "Gemini Flash (Proxy)",
+          "id": "gemini_cli/gemini-2.5-flash",
+          "name": "Gemini 2.5 Flash",
           "limit": {
             "context": 1048576,
             "output": 8192
@@ -60,84 +25,65 @@
             "output": ["text"]
           }
         },
-        "claude-sonnet-4-5-proxy": {
+        "gemini-3-flash-proxy": {
+          "id": "gemini_cli/gemini-3-flash-preview",
+          "name": "Gemini 3 Flash",
+          "limit": {
+            "context": 1048576,
+            "output": 8192
+          },
+          "modalities": {
+            "input": ["image", "text"],
+            "output": ["text"]
+          }
+        },
+        "gemini-25-flash-proxy": {
+          "id": "antigravity/gemini-2.5-flash",
+          "name": "Gemini 2.5 Flash AG",
+          "limit": {
+            "context": 1048576,
+            "output": 8192
+          },
+          "modalities": {
+            "input": ["image", "text"],
+            "output": ["text"]
+          }
+        },
+        "claude-sonnet-proxy": {
           "id": "antigravity/claude-sonnet-4-5",
-          "name": "Claude Sonnet 4.5 (Proxy)",
+          "name": "Claude Sonnet 4.5",
           "limit": {
             "context": 200000,
             "output": 8000
           },
-          "reasoning": false,
           "modalities": {
             "input": ["image", "text"],
             "output": ["text"]
           }
         },
-        "claude-sonnet-4-5-thinking-proxy": {
-          "id": "antigravity/claude-sonnet-4-5",
-          "name": "Claude Sonnet 4.5 Thinking (Proxy)",
+        "claude-sonnet-thinking-proxy": {
+          "id": "antigravity/claude-sonnet-4-5-thinking",
+          "name": "Claude Sonnet 4.5 Thinking",
           "limit": {
             "context": 200000,
             "output": 32000
           },
           "reasoning": true,
-          "options": {
-            "reasoningEffort": "high"
-          },
           "modalities": {
             "input": ["image", "text"],
             "output": ["text"]
           }
         },
-        "claude-opus-4-5-thinking-proxy": {
+        "claude-opus-proxy": {
           "id": "antigravity/claude-opus-4-5",
-          "name": "Claude Opus 4.5 Thinking (Proxy)",
+          "name": "Claude Opus 4.5",
           "limit": {
             "context": 200000,
             "output": 32000
           },
           "reasoning": true,
-          "options": {
-            "reasoningEffort": "high"
-          },
           "modalities": {
             "input": ["image", "text"],
-            "output": ["text"]
-          }
-        },
-        "gpt-4o-proxy": {
-          "id": "openai/gpt-4o",
-          "name": "GPT-4o (Proxy)",
-          "limit": {
-            "context": 128000,
-            "output": 16384
-          },
-          "modalities": {
-            "input": ["image", "text"],
-            "output": ["text"]
-          }
-        },
-        "gpt-4o-mini-proxy": {
-          "id": "openai/gpt-4o-mini",
-          "name": "GPT-4o Mini (Proxy)",
-          "limit": {
-            "context": 128000,
-            "output": 16384
-          },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
-          }
-        },
-        "gpt-4-5-preview-proxy": {
-          "id": "openai/gpt-4.5-preview",
-          "name": "GPT-4.5 Preview (Proxy)",
-          "limit": {
-            "context": 128000,
-            "output": 16384
-          },
-          "modalities": {
-            "input": ["text"],
             "output": ["text"]
           }
         }
