@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
   "agents": {
-    "sisyphus": {
+    "Sisyphus": {
       "model": "llm-proxy/claude-opus-proxy",
       "temperature": 0.3
     },
@@ -18,20 +18,20 @@
       "temperature": 0.3
     },
     "multimodal-looker": {
-      "model": "llm-proxy/gemini-3-pro-proxy"
+      "model": "llm-proxy/gemini-3-flash-proxy"
     },
-    "prometheus": {
+    "Prometheus (Planner)": {
       "model": "llm-proxy/claude-opus-proxy",
       "temperature": 0.2
     },
-    "metis": {
+    "Metis (Plan Consultant)": {
       "model": "llm-proxy/claude-sonnet-thinking-proxy",
       "temperature": 0.2
     }
   },
   "categories": {
     "visual-engineering": {
-      "model": "llm-proxy/gemini-3-pro-proxy",
+      "model": "llm-proxy/gemini-3-flash-proxy",
       "temperature": 0.7,
       "prompt_append": "Focus on modern UI/UX patterns, responsive design, and accessibility."
     },
@@ -44,16 +44,6 @@
       "model": "llm-proxy/gemini-flash-proxy",
       "temperature": 0.3,
       "prompt_append": "Prioritize speed and efficiency."
-    },
-    "coding": {
-      "model": "llm-proxy/claude-sonnet-proxy",
-      "temperature": 0.2,
-      "prompt_append": "Focus on clean, efficient code with best practices."
-    },
-    "reasoning": {
-      "model": "llm-proxy/claude-sonnet-thinking-proxy",
-      "temperature": 0.15,
-      "prompt_append": "Use extended reasoning for complex problem-solving."
     }
   },
   "background_task": {

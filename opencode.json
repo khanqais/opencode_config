@@ -25,21 +25,21 @@
             "output": ["text"]
           }
         },
-        "gemini-3-flash-proxy": {
-          "id": "gemini_cli/gemini-3-flash-preview",
-          "name": "Gemini 3 Flash",
+        "gemini-3-pro-proxy": {
+          "id": "gemini_cli/gemini-3-pro-preview",
+          "name": "Gemini 3 Pro",
           "limit": {
             "context": 1048576,
-            "output": 8192
+            "output": 65536
           },
           "modalities": {
-            "input": ["image", "text"],
+            "input": ["image", "text", "video", "audio"],
             "output": ["text"]
           }
         },
-        "gemini-25-flash-proxy": {
-          "id": "antigravity/gemini-2.5-flash",
-          "name": "Gemini 2.5 Flash AG",
+        "gemini-3-flash-proxy": {
+          "id": "gemini_cli/gemini-3-flash-preview",
+          "name": "Gemini 3 Flash",
           "limit": {
             "context": 1048576,
             "output": 8192
