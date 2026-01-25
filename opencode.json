@@ -86,6 +86,52 @@
             "input": ["image", "text"],
             "output": ["text"]
           }
+        },
+        "deepseek-v3-proxy": {
+          "id": "iflow/deepseek-v3",
+          "name": "DeepSeek V3",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "options": {
+            "max_tokens": 8192
+          },
+          "modalities": {
+            "input": ["text"],
+            "output": ["text"]
+          }
+        },
+        "deepseek-r1-proxy": {
+          "id": "iflow/deepseek-r1",
+          "name": "DeepSeek R1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "reasoning": true,
+          "options": {
+            "max_tokens": 8192
+          },
+          "modalities": {
+            "input": ["text"],
+            "output": ["text"]
+          }
+        },
+        "glm-4-proxy": {
+          "id": "iflow/glm-4.6",
+          "name": "GLM-4.6",
+          "limit": {
+            "context": 200000,
+            "output": 4096
+          },
+          "options": {
+            "max_tokens": 4096
+          },
+          "modalities": {
+            "input": ["image", "text"],
+            "output": ["text"]
+          }
         }
       }
     }

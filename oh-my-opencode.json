@@ -6,7 +6,7 @@
       "temperature": 0.3
     },
     "oracle": {
-      "model": "llm-proxy/claude-sonnet-thinking-proxy",
+      "model": "llm-proxy/deepseek-r1-proxy",
       "temperature": 0.1
     },
     "librarian": {
@@ -21,7 +21,7 @@
       "model": "llm-proxy/gemini-3-pro-proxy"
     },
     "prometheus": {
-      "model": "llm-proxy/claude-opus-proxy",
+      "model": "llm-proxy/deepseek-v3-proxy",
       "temperature": 0.2
     },
     "metis": {
@@ -36,7 +36,7 @@
       "prompt_append": "Focus on modern UI/UX patterns, responsive design, and accessibility."
     },
     "ultrabrain": {
-      "model": "llm-proxy/claude-opus-proxy",
+      "model": "llm-proxy/deepseek-r1-proxy",
       "temperature": 0.1,
       "prompt_append": "Apply deep strategic thinking and architectural reasoning."
     },
@@ -46,14 +46,24 @@
       "prompt_append": "Prioritize speed and efficiency."
     },
     "coding": {
-      "model": "llm-proxy/claude-sonnet-proxy",
+      "model": "llm-proxy/deepseek-v3-proxy",
       "temperature": 0.2,
       "prompt_append": "Focus on clean, efficient code with best practices."
     },
     "reasoning": {
-      "model": "llm-proxy/claude-sonnet-thinking-proxy",
+      "model": "llm-proxy/deepseek-r1-proxy",
       "temperature": 0.15,
       "prompt_append": "Use extended reasoning for complex problem-solving."
+    },
+    "backup-coding": {
+      "model": "llm-proxy/claude-sonnet-proxy",
+      "temperature": 0.2,
+      "prompt_append": "High-quality code when DeepSeek is unavailable."
+    },
+    "multimodal": {
+      "model": "llm-proxy/glm-4-proxy",
+      "temperature": 0.3,
+      "prompt_append": "Handle image and text analysis tasks."
     }
   },
   "background_task": {
