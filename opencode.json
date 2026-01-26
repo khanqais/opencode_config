@@ -1,8 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "plugin": ["oh-my-opencode"],
-  "model": "llm-proxy/gemini-flash-proxy",
-  "small_model": "llm-proxy/gemini-flash-proxy",
+  "model": "llm-proxy/gemini-cli-flash-proxy",
+  "small_model": "llm-proxy/gemini-cli-flash-proxy",
   "provider": {
     "llm-proxy": {
       "npm": "@ai-sdk/openai-compatible",
@@ -13,9 +13,9 @@
         "timeout": 300000
       },
       "models": {
-        "gemini-flash-proxy": {
+        "gemini-cli-flash-proxy": {
           "id": "gemini_cli/gemini-2.5-flash",
-          "name": "Gemini 2.5 Flash",
+          "name": "Gemini CLI 2.5 Flash",
           "limit": {
             "context": 1048576,
             "output": 8192
@@ -25,9 +25,9 @@
             "output": ["text"]
           }
         },
-        "gemini-3-pro-proxy": {
+        "gemini-cli-3-pro-proxy": {
           "id": "gemini_cli/gemini-3-pro-preview",
-          "name": "Gemini 3 Pro",
+          "name": "Gemini CLI 3 Pro",
           "limit": {
             "context": 1048576,
             "output": 65536
@@ -37,9 +37,59 @@
             "output": ["text"]
           }
         },
-        "gemini-3-flash-proxy": {
+        "gemini-cli-3-flash-proxy": {
           "id": "gemini_cli/gemini-3-flash-preview",
-          "name": "Gemini 3 Flash",
+          "name": "Gemini CLI 3 Flash",
+          "limit": {
+            "context": 1048576,
+            "output": 8192
+          },
+          "modalities": {
+            "input": ["image", "text"],
+            "output": ["text"]
+          }
+        },
+        "gemini-ag-3-pro-base-proxy": {
+          "id": "antigravity/gemini-3-pro-preview",
+          "name": "Gemini AG 3 Pro Base",
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          },
+          "modalities": {
+            "input": ["image", "text", "video", "audio"],
+            "output": ["text"]
+          }
+        },
+        "gemini-ag-3-pro-high-proxy": {
+          "id": "antigravity/gemini-3-pro-high",
+          "name": "Gemini AG 3 Pro High Thinking",
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          },
+          "reasoning": true,
+          "modalities": {
+            "input": ["image", "text", "video", "audio"],
+            "output": ["text"]
+          }
+        },
+        "gemini-ag-3-pro-low-proxy": {
+          "id": "antigravity/gemini-3-pro-low",
+          "name": "Gemini AG 3 Pro Low Thinking",
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          },
+          "reasoning": true,
+          "modalities": {
+            "input": ["image", "text", "video", "audio"],
+            "output": ["text"]
+          }
+        },
+        "gemini-ag-3-flash-proxy": {
+          "id": "antigravity/gemini-3-flash-preview",
+          "name": "Gemini AG 3 Flash",
           "limit": {
             "context": 1048576,
             "output": 8192
