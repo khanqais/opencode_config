@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
   "agents": {
     "sisyphus": {
       "model": "llm-proxy/claude-opus-proxy",
@@ -14,18 +15,15 @@
     },
     "explore": {
       "model": "llm-proxy/gemini-cli-flash-proxy",
-      "temperature": 0.3,
-      "comment": "2.5 Flash - ALWAYS works"
+      "temperature": 0.3
     },
     "multimodal-looker": {
       "model": "llm-proxy/gemini-ag-3-pro-base-proxy",
-      "temperature": 0.5,
-      "comment": "Antigravity route - more stable"
+      "temperature": 0.5
     },
     "prometheus": {
       "model": "llm-proxy/deepseek-v3-proxy",
-      "temperature": 0.2,
-      "comment": "Unlimited - NEVER fails"
+      "temperature": 0.2
     },
     "metis": {
       "model": "llm-proxy/claude-sonnet-thinking-proxy",
@@ -35,25 +33,50 @@
   "categories": {
     "visual-engineering": {
       "model": "llm-proxy/gemini-ag-3-pro-base-proxy",
-      "temperature": 0.7
+      "temperature": 0.7,
+      "prompt_append": "Focus on modern UI/UX patterns, responsive design, and accessibility."
     },
     "ultrabrain": {
       "model": "llm-proxy/deepseek-r1-proxy",
-      "temperature": 0.1
+      "temperature": 0.1,
+      "prompt_append": "Apply deep strategic thinking and architectural reasoning."
     },
     "quick": {
       "model": "llm-proxy/gemini-cli-flash-proxy",
       "temperature": 0.3,
-      "comment": "2.5 Flash - reliable"
+      "prompt_append": "Prioritize speed and efficiency."
     },
     "coding": {
       "model": "llm-proxy/deepseek-v3-proxy",
       "temperature": 0.2,
-      "comment": "Best coding + unlimited"
+      "prompt_append": "Focus on clean, efficient code with best practices."
     },
     "reasoning": {
       "model": "llm-proxy/deepseek-r1-proxy",
-      "temperature": 0.15
+      "temperature": 0.15,
+      "prompt_append": "Use extended reasoning for complex problem-solving."
+    },
+    "backup-coding": {
+      "model": "llm-proxy/claude-sonnet-proxy",
+      "temperature": 0.2,
+      "prompt_append": "High-quality code when DeepSeek is unavailable."
+    },
+    "multimodal": {
+      "model": "llm-proxy/glm-4-proxy",
+      "temperature": 0.3,
+      "prompt_append": "Handle image and text analysis tasks."
     }
+  },
+  "background_task": {
+    "defaultConcurrency": 5,
+    "providerConcurrency": {
+      "llm-proxy": 8
+    }
+  },
+  "sisyphus_agent": {
+    "disabled": false,
+    "default_builder_enabled": false,
+    "planner_enabled": true,
+    "replace_plan": true
   }
 }
