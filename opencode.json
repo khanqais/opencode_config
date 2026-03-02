@@ -72,12 +72,6 @@
           "limit": { "context": 1048576, "output": 8192 },
           "modalities": { "input": ["image", "text"], "output": ["text"] }
         },
-        "gemini-ag-3-pro-base-proxy": {
-          "id": "antigravity/gemini-3-pro-preview",
-          "name": "Gemini AG 3 Pro Preview",
-          "limit": { "context": 1048576, "output": 65536 },
-          "modalities": { "input": ["image", "text", "video", "audio"], "output": ["text"] }
-        },
         "gemini-ag-31-pro-high-proxy": {
           "id": "antigravity/gemini-3.1-pro-high",
           "name": "Gemini AG 3.1 Pro High Thinking",
