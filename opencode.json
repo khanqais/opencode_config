@@ -3,6 +3,15 @@
   "plugin": ["oh-my-opencode"],
   "model": "llm-proxy/gemini-cli-flash-proxy",
   "small_model": "llm-proxy/gemini-cli-flash-proxy",
+  "permission": {
+    "*": "allow",
+    "bash": {
+      "*": "allow",
+      "git add *": "deny",
+      "git commit *": "deny",
+      "git push *": "deny"
+    }
+  },
   "provider": {
     "llm-proxy": {
       "npm": "@ai-sdk/openai-compatible",
@@ -13,340 +22,178 @@
         "timeout": 300000
       },
       "models": {
+
         "gemini-cli-25-pro-proxy": {
           "id": "gemini_cli/gemini-2.5-pro",
           "name": "Gemini CLI 2.5 Pro",
-          "limit": {
-            "context": 1048576,
-            "output": 65536
-          },
-          "modalities": {
-            "input": ["image", "text", "video", "audio"],
-            "output": ["text"]
-          }
+          "limit": { "context": 1048576, "output": 65536 },
+          "modalities": { "input": ["image", "text", "video", "audio"], "output": ["text"] }
         },
         "gemini-cli-flash-proxy": {
           "id": "gemini_cli/gemini-2.5-flash",
           "name": "Gemini CLI 2.5 Flash",
-          "limit": {
-            "context": 1048576,
-            "output": 8192
-          },
-          "modalities": {
-            "input": ["image", "text"],
-            "output": ["text"]
-          }
-        },
-        "gemini-cli-20-flash-lite-proxy": {
-          "id": "gemini_cli/gemini-2.0-flash-lite",
-          "name": "Gemini CLI 2.0 Flash Lite",
-          "limit": {
-            "context": 1048576,
-            "output": 8192
-          },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
-          }
+          "limit": { "context": 1048576, "output": 8192 },
+          "modalities": { "input": ["image", "text"], "output": ["text"] }
         },
         "gemini-cli-3-pro-proxy": {
           "id": "gemini_cli/gemini-3-pro-preview",
           "name": "Gemini CLI 3 Pro Preview",
-          "limit": {
-            "context": 1048576,
-            "output": 65536
-          },
-          "modalities": {
-            "input": ["image", "text", "video", "audio"],
-            "output": ["text"]
-          }
+          "limit": { "context": 1048576, "output": 65536 },
+          "modalities": { "input": ["image", "text", "video", "audio"], "output": ["text"] }
         },
         "gemini-cli-3-flash-proxy": {
           "id": "gemini_cli/gemini-3-flash-preview",
           "name": "Gemini CLI 3 Flash Preview",
-          "limit": {
-            "context": 1048576,
-            "output": 8192
-          },
-          "modalities": {
-            "input": ["image", "text"],
-            "output": ["text"]
-          }
+          "limit": { "context": 1048576, "output": 8192 },
+          "modalities": { "input": ["image", "text"], "output": ["text"] }
         },
-        "gemini-cli-25-pro-tts-proxy": {
-          "id": "gemini_cli/gemini-2.5-pro-tts",
-          "name": "Gemini CLI 2.5 Pro TTS",
-          "limit": {
-            "context": 8192,
-            "output": 16384
-          },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text", "audio"]
-          }
-        },
+
         "gemini-ag-25-pro-proxy": {
           "id": "antigravity/gemini-2.5-pro",
           "name": "Gemini AG 2.5 Pro",
-          "limit": {
-            "context": 1048576,
-            "output": 65536
-          },
-          "modalities": {
-            "input": ["image", "text", "video", "audio"],
-            "output": ["text"]
-          }
+          "limit": { "context": 1048576, "output": 65536 },
+          "modalities": { "input": ["image", "text", "video", "audio"], "output": ["text"] }
         },
         "gemini-ag-25-flash-proxy": {
           "id": "antigravity/gemini-2.5-flash",
           "name": "Gemini AG 2.5 Flash",
-          "limit": {
-            "context": 1048576,
-            "output": 8192
-          },
-          "modalities": {
-            "input": ["image", "text"],
-            "output": ["text"]
-          }
+          "limit": { "context": 1048576, "output": 8192 },
+          "modalities": { "input": ["image", "text"], "output": ["text"] }
         },
         "gemini-ag-25-lite-proxy": {
           "id": "antigravity/gemini-2.5-flash-lite",
           "name": "Gemini AG 2.5 Flash Lite",
-          "limit": {
-            "context": 1048576,
-            "output": 8192
-          },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
-          }
+          "limit": { "context": 1048576, "output": 8192 },
+          "modalities": { "input": ["text"], "output": ["text"] }
+        },
+        "gemini-ag-3-flash-proxy": {
+          "id": "antigravity/gemini-3-flash",
+          "name": "Gemini AG 3 Flash",
+          "limit": { "context": 1048576, "output": 8192 },
+          "modalities": { "input": ["image", "text"], "output": ["text"] }
         },
         "gemini-ag-3-pro-base-proxy": {
           "id": "antigravity/gemini-3-pro-preview",
-          "name": "Gemini AG 3 Pro Base",
-          "limit": {
-            "context": 1048576,
-            "output": 65536
-          },
-          "modalities": {
-            "input": ["image", "text", "video", "audio"],
-            "output": ["text"]
-          }
+          "name": "Gemini AG 3 Pro Preview",
+          "limit": { "context": 1048576, "output": 65536 },
+          "modalities": { "input": ["image", "text", "video", "audio"], "output": ["text"] }
         },
-        "gemini-ag-3-pro-high-proxy": {
-          "id": "antigravity/gemini-3-pro-high",
-          "name": "Gemini AG 3 Pro High Thinking",
-          "limit": {
-            "context": 1048576,
-            "output": 65536
-          },
+        "gemini-ag-31-pro-high-proxy": {
+          "id": "antigravity/gemini-3.1-pro-high",
+          "name": "Gemini AG 3.1 Pro High Thinking",
+          "limit": { "context": 1048576, "output": 65536 },
           "reasoning": true,
-          "modalities": {
-            "input": ["image", "text", "video", "audio"],
-            "output": ["text"]
-          }
+          "modalities": { "input": ["image", "text", "video", "audio"], "output": ["text"] }
         },
-        "gemini-ag-3-pro-low-proxy": {
-          "id": "antigravity/gemini-3-pro-low",
-          "name": "Gemini AG 3 Pro Low Thinking",
-          "limit": {
-            "context": 1048576,
-            "output": 65536
-          },
+        "gemini-ag-31-pro-low-proxy": {
+          "id": "antigravity/gemini-3.1-pro-low",
+          "name": "Gemini AG 3.1 Pro Low Thinking",
+          "limit": { "context": 1048576, "output": 65536 },
           "reasoning": true,
-          "modalities": {
-            "input": ["image", "text", "video", "audio"],
-            "output": ["text"]
-          }
+          "modalities": { "input": ["image", "text", "video", "audio"], "output": ["text"] }
         },
-        "gemini-ag-3-flash-proxy": {
-          "id": "antigravity/gemini-3-flash-preview",
-          "name": "Gemini AG 3 Flash",
-          "limit": {
-            "context": 1048576,
-            "output": 8192
-          },
-          "modalities": {
-            "input": ["image", "text"],
-            "output": ["text"]
-          }
-        },
+
         "claude-sonnet-proxy": {
           "id": "antigravity/claude-sonnet-4-5",
           "name": "Claude Sonnet 4.5",
-          "limit": {
-            "context": 200000,
-            "output": 8000
-          },
-          "modalities": {
-            "input": ["image", "text"],
-            "output": ["text"]
-          }
+          "limit": { "context": 200000, "output": 8000 },
+          "modalities": { "input": ["image", "text"], "output": ["text"] }
         },
         "claude-sonnet-thinking-proxy": {
           "id": "antigravity/claude-sonnet-4-5-thinking",
           "name": "Claude Sonnet 4.5 Thinking",
-          "limit": {
-            "context": 200000,
-            "output": 32000
-          },
+          "limit": { "context": 200000, "output": 32000 },
           "reasoning": true,
-          "modalities": {
-            "input": ["image", "text"],
-            "output": ["text"]
-          }
+          "modalities": { "input": ["image", "text"], "output": ["text"] }
         },
-        "claude-opus-proxy": {
+        "claude-opus-45-proxy": {
           "id": "antigravity/claude-opus-4-5",
           "name": "Claude Opus 4.5",
-          "limit": {
-            "context": 200000,
-            "output": 32000
-          },
+          "limit": { "context": 200000, "output": 32000 },
           "reasoning": true,
-          "modalities": {
-            "input": ["image", "text"],
-            "output": ["text"]
-          }
+          "modalities": { "input": ["image", "text"], "output": ["text"] }
         },
+        "claude-opus-46-thinking-proxy": {
+          "id": "antigravity/claude-opus-4-6-thinking",
+          "name": "Claude Opus 4.6 Thinking",
+          "limit": { "context": 200000, "output": 64000 },
+          "reasoning": true,
+          "modalities": { "input": ["image", "text"], "output": ["text"] }
+        },
+        "gpt-oss-120b-proxy": {
+          "id": "antigravity/gpt-oss-120b-medium",
+          "name": "GPT-OSS 120B Medium",
+          "limit": { "context": 128000, "output": 16384 },
+          "modalities": { "input": ["image", "text"], "output": ["text"] }
+        },
+
         "deepseek-v3-proxy": {
           "id": "iflow/deepseek-v3",
           "name": "DeepSeek V3",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          },
-          "options": {
-            "max_tokens": 8192
-          },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
-          }
+          "limit": { "context": 128000, "output": 8192 },
+          "options": { "max_tokens": 8192 },
+          "modalities": { "input": ["text"], "output": ["text"] }
         },
         "deepseek-r1-proxy": {
           "id": "iflow/deepseek-r1",
           "name": "DeepSeek R1",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          },
+          "limit": { "context": 128000, "output": 8192 },
           "reasoning": true,
-          "options": {
-            "max_tokens": 8192
-          },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
-          }
+          "options": { "max_tokens": 8192 },
+          "modalities": { "input": ["text"], "output": ["text"] }
         },
         "deepseek-r1-distill-qwen-proxy": {
           "id": "iflow/deepseek-r1-distill-qwen-32b",
           "name": "DeepSeek R1 Distill Qwen 32B",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          },
+          "limit": { "context": 128000, "output": 8192 },
           "reasoning": true,
-          "options": {
-            "max_tokens": 8192
-          },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
-          }
+          "options": { "max_tokens": 8192 },
+          "modalities": { "input": ["text"], "output": ["text"] }
         },
         "deepseek-r1-distill-llama-proxy": {
           "id": "iflow/deepseek-r1-distill-llama-70b",
           "name": "DeepSeek R1 Distill Llama 70B",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          },
+          "limit": { "context": 128000, "output": 8192 },
           "reasoning": true,
-          "options": {
-            "max_tokens": 8192
-          },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
-          }
+          "options": { "max_tokens": 8192 },
+          "modalities": { "input": ["text"], "output": ["text"] }
         },
         "glm-4-proxy": {
           "id": "iflow/glm-4.6",
           "name": "GLM-4.6",
-          "limit": {
-            "context": 200000,
-            "output": 4096
-          },
-          "options": {
-            "max_tokens": 4096
-          },
-          "modalities": {
-            "input": ["image", "text"],
-            "output": ["text"]
-          }
+          "limit": { "context": 200000, "output": 4096 },
+          "options": { "max_tokens": 4096 },
+          "modalities": { "input": ["image", "text"], "output": ["text"] }
         },
         "qwen-coder-plus-proxy": {
           "id": "iflow/qwen3-coder-plus",
           "name": "Qwen3 Coder Plus",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          },
-          "options": {
-            "max_tokens": 8192
-          },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
-          }
+          "limit": { "context": 128000, "output": 8192 },
+          "options": { "max_tokens": 8192 },
+          "modalities": { "input": ["text"], "output": ["text"] }
         },
         "qwen-turbo-proxy": {
           "id": "iflow/qwen-turbo",
           "name": "Qwen Turbo",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          },
-          "options": {
-            "max_tokens": 8192
-          },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
-          }
+          "limit": { "context": 128000, "output": 8192 },
+          "options": { "max_tokens": 8192 },
+          "modalities": { "input": ["text"], "output": ["text"] }
         },
         "qwen-plus-proxy": {
           "id": "iflow/qwen-plus",
           "name": "Qwen Plus",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          },
-          "options": {
-            "max_tokens": 8192
-          },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
-          }
+          "limit": { "context": 128000, "output": 8192 },
+          "options": { "max_tokens": 8192 },
+          "modalities": { "input": ["text"], "output": ["text"] }
         },
         "qwen-max-proxy": {
           "id": "iflow/qwen-max",
           "name": "Qwen Max",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          },
-          "options": {
-            "max_tokens": 8192
-          },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
-          }
+          "limit": { "context": 128000, "output": 8192 },
+          "options": { "max_tokens": 8192 },
+          "modalities": { "input": ["text"], "output": ["text"] }
         }
+
       }
     }
   }
