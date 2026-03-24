@@ -174,17 +174,31 @@
             "output": ["text"]
           }
         },
+        "deepseek-v3-1-proxy": {
+          "id": "iflow/deepseek-v3.1",
+          "name": "DeepSeek V3.1",
+          "limit": { "context": 163840, "output": 65536 },
+          "options": { "max_tokens": 65536 },
+          "modalities": { "input": ["text"], "output": ["text"] }
+        },
+        "deepseek-v3-2-proxy": {
+          "id": "iflow/deepseek-v3.2",
+          "name": "DeepSeek V3.2",
+          "limit": { "context": 128000, "output": 64000 },
+          "options": { "max_tokens": 64000 },
+          "modalities": { "input": ["text"], "output": ["text"] }
+        },
         "deepseek-r1-proxy": {
-  "id": "iflow/deepseek-r1",
-  "name": "DeepSeek R1",
-  "limit": { "context": 128000, "output": 8192 },
-  "reasoning": true,
-  "options": { 
-    "max_tokens": 8192,
-    "stop": ["<|im_end|>", "<|endoftext|>", "</s>", "<｜end▁of▁sentence｜>"]
-  },
-  "modalities": { "input": ["text"], "output": ["text"] }
-},
+          "id": "iflow/deepseek-r1",
+          "name": "DeepSeek R1",
+          "limit": { "context": 128000, "output": 8192 },
+          "reasoning": true,
+          "options": {
+            "max_tokens": 8192,
+            "stop": ["<|im_end|>", "<|endoftext|>", "</s>", "<｜end▁of▁sentence｜>"]
+          },
+          "modalities": { "input": ["text"], "output": ["text"] }
+        },
         "glm-4-proxy": {
           "id": "iflow/glm-4.6",
           "name": "GLM-4.6",
@@ -198,61 +212,26 @@
         "kimi-k2-proxy": {
           "id": "iflow/kimi-k2",
           "name": "Kimi K2",
-          "limit": { "context": 128000, "output": 8192 },
-          "options": { "max_tokens": 8192 },
+          "limit": { "context": 128000, "output": 64000 },
+          "options": { "max_tokens": 64000 },
           "modalities": {
             "input": ["text"],
             "output": ["text"]
           }
         },
-        "qwen3-coder-plus-proxy": {
-          "id": "iflow/qwen3-coder-plus",
-          "name": "Qwen3 Coder Plus",
-          "limit": { "context": 128000, "output": 8192 },
-          "options": { "max_tokens": 8192 },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
-          }
-        },
-        "qwen3-235b-thinking-proxy": {
-  "id": "iflow/qwen3-235b-a22b-thinking-2507",
-  "name": "Qwen3 235B Thinking",
-  "limit": { "context": 256000, "output": 64000 },
-  "reasoning": true,
-  "options": { "max_tokens": 16384 },
-  "modalities": { "input": ["text"], "output": ["text"] }
-},
-"deepseek-v3-1-proxy": {
-  "id": "iflow/deepseek-v3.1",
-  "name": "DeepSeek V3.1",
-  "limit": { "context": 163840, "output": 65536 },
-  "options": { "max_tokens": 65536 },
-  "modalities": { "input": ["text"], "output": ["text"] }
-},
-
-        "deepseek-v3-2-proxy": {
-  "id": "iflow/deepseek-v3.2",
-  "name": "DeepSeek V3.2",
-  "limit": { "context": 128000, "output": 8192 },
-  "options": { "max_tokens": 8192 },
-  "modalities": { "input": ["text"], "output": ["text"] }
-},
-        "qwen3-235b-instruct-proxy": {
-          "id": "iflow/qwen3-235b-a22b-instruct",
-          "name": "Qwen3 235B A22B Instruct",
-          "limit": { "context": 256000, "output": 8192 },
-          "options": { "max_tokens": 8192 },
-          "modalities": {
-            "input": ["text"],
-            "output": ["text"]
-          }
+        "kimi-k2-thinking-proxy": {
+        "id": "iflow/kimi-k2-thinking",
+        "name": "Kimi K2 Thinking",
+        "limit": { "context": 262144, "output": 16384 },
+        "reasoning": true,
+        "options": { "max_tokens": 16384 },
+        "modalities": { "input": ["text"], "output": ["text"] }
         },
         "qwen3-max-proxy": {
           "id": "iflow/qwen3-max",
           "name": "Qwen3 Max",
-          "limit": { "context": 256000, "output": 8192 },
-          "options": { "max_tokens": 8192 },
+          "limit": { "context": 256000, "output": 32000 },
+          "options": { "max_tokens": 32000 },
           "modalities": {
             "input": ["text"],
             "output": ["text"]
@@ -263,6 +242,34 @@
           "name": "Qwen3 Max Preview",
           "limit": { "context": 256000, "output": 8192 },
           "options": { "max_tokens": 8192 },
+          "modalities": {
+            "input": ["text"],
+            "output": ["text"]
+          }
+        },
+        "qwen3-235b-instruct-proxy": {
+          "id": "iflow/qwen3-235b-a22b-instruct",
+          "name": "Qwen3 235B A22B Instruct",
+          "limit": { "context": 256000, "output": 64000 },
+          "options": { "max_tokens": 64000 },
+          "modalities": {
+            "input": ["text"],
+            "output": ["text"]
+          }
+        },
+        "qwen3-235b-thinking-proxy": {
+          "id": "iflow/qwen3-235b-a22b-thinking-2507",
+          "name": "Qwen3 235B Thinking",
+          "limit": { "context": 256000, "output": 64000 },
+          "reasoning": true,
+          "options": { "max_tokens": 16384 },
+          "modalities": { "input": ["text"], "output": ["text"] }
+        },
+        "qwen3-coder-plus-proxy": {
+          "id": "iflow/qwen3-coder-plus",
+          "name": "Qwen3 Coder Plus",
+          "limit": { "context": 256000, "output": 65536 },
+          "options": { "max_tokens": 65536 },
           "modalities": {
             "input": ["text"],
             "output": ["text"]
@@ -279,12 +286,34 @@
           }
         },
         "qwen3-coder-plus-qwen-proxy": {
-  "id": "qwen_code/qwen3-coder-plus",
-  "name": "Qwen3 Coder Plus (Qwen Auth)",
-  "limit": { "context": 256000, "output": 8192 },
-  "options": { "max_tokens": 8192 },
-  "modalities": { "input": ["text"], "output": ["text"] }
-}
+          "id": "qwen_code/qwen3-coder-plus",
+          "name": "Qwen3 Coder Plus (Qwen Auth)",
+          "limit": { "context": 1000000, "output": 65536 },
+          "options": { "max_tokens": 65536 },
+          "modalities": { "input": ["text"], "output": ["text"] }
+        },
+        "qwen3-coder-flash-proxy": {
+          "id": "qwen_code/qwen3-coder-flash",
+          "name": "Qwen3 Coder Flash (Qwen Auth)",
+          "limit": { "context": 1000000, "output": 65536 },
+          "options": { "max_tokens": 65536 },
+          "modalities": { "input": ["text"], "output": ["text"] }
+        },
+        "qwen25-coder-32b-proxy": {
+          "id": "qwen_code/qwen2.5-coder-32b-instruct",
+          "name": "Qwen2.5 Coder 32B (Qwen Auth)",
+          "limit": { "context": 131072, "output": 8192 },
+          "options": { "max_tokens": 8192 },
+          "modalities": { "input": ["text"], "output": ["text"] }
+        },
+        "qwq-32b-proxy": {
+          "id": "qwen_code/qwq-32b",
+          "name": "QwQ 32B (Qwen Auth)",
+          "limit": { "context": 131072, "output": 8192 },
+          "reasoning": true,
+          "options": { "max_tokens": 8192 },
+          "modalities": { "input": ["text"], "output": ["text"] }
+        }
       }
     },
     "kilogateway": {
